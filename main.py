@@ -7,16 +7,16 @@ nltk.download('wordnet')
 from nltk.corpus import stopwords
 import re
 from nltk.corpus import wordnet
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
+#from wordcloud import WordCloud
+#import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.naive_bayes import MultinomialNB
+#from sklearn.linear_model import LogisticRegression
+#from sklearn.naive_bayes import MultinomialNB
 from sklearn.svm import SVC,LinearSVC
-from sklearn.ensemble import RandomForestClassifier
+#from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.pipeline import make_pipeline
-from nltk.classify.scikitlearn import SklearnClassifier
+#from nltk.classify.scikitlearn import SklearnClassifier
 from sklearn.metrics import accuracy_score
 import pickle
 from pydantic import BaseModel
@@ -168,8 +168,8 @@ ChildrenModels = loadChildrenModels()
 
 @app.post("/predict")
 def predict(request: DescriptionRequest):
-    print("Hello Post")
-    print(request)
+    #print("Hello Post")
+    #print(request)
     if request.modelName == "Parent":
         return {"predictions": predict_probas(ParentModel, request.text)[:5]}
     else:
@@ -177,7 +177,7 @@ def predict(request: DescriptionRequest):
 
 @app.get('/')
 def root():
-    print("Hello World")
+    #print("Hello World")
     return {"message": "Hello World"}
 
 
