@@ -2,7 +2,8 @@ import pandas as pd
 import numpy
 import csv
 import nltk
-#nltk.download('stopwords')
+nltk.download('stopwords')
+nltk.download('wordnet')
 from nltk.corpus import stopwords
 import re
 from nltk.corpus import wordnet
@@ -150,7 +151,6 @@ def softmax(x):
 #print(res2[:3])
 
 def prepare():
-    nltk.download('stopwords')
     data = load_hsCodes()
     data = preprocess(data)
     data = textAugmentation(data)
@@ -183,7 +183,7 @@ def root():
 
 
 if __name__ == "__main__":
-    uvicorn.run(app,host="127.0.0.1", port=3000)
+    uvicorn.run(app,host="0.0.0.0", port=3000)
 
 
 
